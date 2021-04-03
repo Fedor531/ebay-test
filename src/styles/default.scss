@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.button-default {
+    padding: 16px 20px;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #629dff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    &:hover {
+        color: #fff;
+        background-color: #2e5bfb;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        transition: 0.1s ease;
+        background-color: #3400f6;
+        transform: scale(0.98);
+    }
+}

@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
 
   module: {
@@ -27,11 +27,22 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images',
+              esModule: false // <- here
+            }
+          }
+        ]
+      },
     ]
   },
-
-  mode: 'development',
   devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, './dist'),

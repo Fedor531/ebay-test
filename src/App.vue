@@ -1,27 +1,28 @@
 <template>
-  <div id="text">
-    <h3>{{ text }}</h3>
-    <Test />
+  <div class="app">
+    <Main />
   </div>
 </template>
 <script>
-import Test from './components/Test.vue'
+import Main from './views/Main.vue';
 
 export default {
   name: 'app',
   components: {
-      Test
+    Main,
   },
   data() {
-    return {
-      text: 'Hello i am test',
-    };
+    return {};
   },
 };
 </script>
 
 <style lang="scss">
-#text {
-  color: red;
+@import './styles/default';
+
+.app {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
 }
 </style>>
