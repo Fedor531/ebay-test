@@ -40,6 +40,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "vue": "^2.6.12"
+    "swiper": "^6.5.3",
+    "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1"
   }
 }

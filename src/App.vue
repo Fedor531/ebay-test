@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Main />
+    <component v-bind:is="currentComponent"></component>
   </div>
 </template>
 <script>
@@ -9,10 +9,15 @@ import Main from './views/Main.vue';
 export default {
   name: 'app',
   components: {
-    Main,
+    mainPage: Main,
   },
   data() {
     return {};
+  },
+  computed: {
+    currentComponent() {
+      return 'mainPage';
+    },
   },
 };
 </script>
@@ -23,6 +28,6 @@ export default {
 .app {
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 </style>>
