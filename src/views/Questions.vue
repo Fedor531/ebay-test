@@ -17,14 +17,9 @@
       </div>
     </div>
     <div class="questions__right">
- <!--      <div class="questions-images">
-        <div class="questions-images__first-block">
-
-        </div>
-        <div class="questions-images__first-block">
-
-        </div>
-      </div> -->
+      <div class="questions-images">
+        
+      </div>
     </div>
   </div>
 </template>

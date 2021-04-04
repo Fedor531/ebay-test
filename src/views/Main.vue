@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="main__left">
-      <MainContent />
+      <MainContent :title="title" :button="button" @nextPage="nextPage" />
     </div>
     <div class="main__right">
       <MainSwiper />
@@ -11,6 +11,7 @@
 
 
 <script>
+import { mapMutations } from 'vuex';
 import MainSwiper from '../components/MainSwiper.vue';
 import MainContent from '../components/MainContent.vue';
 
@@ -21,7 +22,14 @@ export default {
     MainContent,
   },
   data() {
-    return {};
+    return {
+      title:
+        'eBay исполняется 25 лет! Проверьте, а все ли у вас сбалансировано в жизни',
+      button: 'Начать тест',
+    };
+  },
+  methods: {
+    ...mapMutations(['nextPage']),
   },
 };
 </script>
@@ -48,7 +56,6 @@ export default {
       width: 100%;
       height: 68%;
     }
-
     &__right {
       height: 32%;
       width: 100%;

@@ -3,26 +3,21 @@
     <h1 class="main-content__title">
       {{ title }}
     </h1>
-    <button class="main-content__button button-default" @click="next">
+    <button class="main-content__button button-default" @click="nextPage">
       {{ button }}
     </button>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
 export default {
-  data() {
-    return {
-      title:
-        'eBay исполняется 25 лет!Проверьте, а все ли у вас сбалансировано в жизни',
-      button: 'Начать тест',
-    };
+  props: {
+    title: String,
+    button: String,
   },
   methods: {
-    ...mapMutations(['nextPage']),
-    next() {
-      this.nextPage();
+    nextPage() {
+      this.$emit('nextPage');
     },
   },
 };
