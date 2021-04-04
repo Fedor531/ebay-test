@@ -22,9 +22,9 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(['pages', 'activePage']),
+    ...mapGetters(['activePage']),
     currentComponent() {
-      return this.pages[this.activePage];
+      return this.activePage;
     },
   },
 };

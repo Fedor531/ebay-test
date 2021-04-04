@@ -1,20 +1,17 @@
 export default {
     state: {
-        pages: ['mainPage', 'questionsPage', 'resultsPage'],
-        activePage: 0
+        activePage: 'mainPage'
     },
     actions: {
 
     },
     mutations: {
-        nextPage(state) {
-            state.activePage++;
+        nextPage(state, page) {
+            state.activePage = page;
         }
     },
     getters: {
-        pages: state => {
-            return state.pages
-        },
+
         activePage: state => {
             return state.activePage
         }

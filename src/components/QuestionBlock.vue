@@ -40,7 +40,7 @@ export default {
     answerQuestion() {
       if (this.questions.length === this.currentQuestion.id) {
         // Запрос к бд
-        this.nextPage();
+        this.nextPage('resultsPage');
       } else {
         // Запрос к бд
         this.activeQuestion += 1;
@@ -56,10 +56,12 @@ export default {
   color: #365001;
   padding: 16px;
   min-width: 83%;
+  padding: 0 40px;
   &._text-white {
     color: #fff;
   }
   &__title {
+    font-size: 26px;
     margin-bottom: 20px;
   }
   &__btns {
@@ -71,6 +73,12 @@ export default {
     margin-right: auto;
     &:not(:last-child) {
       margin-bottom: 10px;
+    }
+  }
+  @media all and (max-width: 699px) {
+    padding: 0 16px;
+    &__title {
+      font-size: 24px;
     }
   }
 }

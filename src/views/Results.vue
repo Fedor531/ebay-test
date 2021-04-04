@@ -4,7 +4,12 @@
       <div class="results__container">
         <h2 class="results__title">{{ title }}</h2>
         <p class="results__subtitle">{{ subtitle }}</p>
-        <button class="results__reset button-default">Пройти еще раз</button>
+        <button
+          class="results__reset button-default"
+          @click="nextPage('mainPage')"
+        >
+          Пройти еще раз
+        </button>
         <button class="results__active question-btn">{{ activeButton }}</button>
       </div>
     </div>
@@ -14,6 +19,8 @@
 
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'results',
 
@@ -25,6 +32,10 @@ export default {
       subtitle: 'Вы прошли тест и можете посмотреть на свои результаты',
       activeButton: 'Устроить шопинг',
     };
+  },
+
+  methods: {
+    ...mapMutations(['nextPage']),
   },
 };
 </script>
@@ -69,7 +80,7 @@ export default {
     color: #111259;
   }
   &__container {
-    padding: 16px;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
   }
@@ -77,13 +88,15 @@ export default {
     width: 50%;
     background-color: #92c9ff;
   }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 699px) {
     flex-direction: column;
     &__left {
       width: 100%;
       height: 50%;
     }
-
+    &__container {
+      padding: 0 16px;
+    }
     &__right {
       height: 50%;
       width: 100%;

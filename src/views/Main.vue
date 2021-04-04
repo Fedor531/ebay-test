@@ -1,7 +1,11 @@
 <template>
   <div class="main">
     <div class="main__left">
-      <MainContent :title="title" :button="button" @nextPage="nextPage" />
+      <MainContent
+        :title="title"
+        :button="button"
+        @nextPage="nextPage('questionsPage')"
+      />
     </div>
     <div class="main__right">
       <MainSwiper />
@@ -50,7 +54,7 @@ export default {
     width: 32%;
   }
 
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 699px) {
     flex-direction: column;
     &__left {
       width: 100%;

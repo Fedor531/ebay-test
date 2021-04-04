@@ -115,7 +115,7 @@ export default {
   &__right {
     width: 45%;
   }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 699px) {
     flex-direction: column;
     &__left {
       width: 100%;

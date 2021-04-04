@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
 .main-content {
   max-width: 400px;
+  padding: 0 40px;
   &__title {
     font-weight: 900;
     font-size: 32px;
@@ -34,7 +35,7 @@ export default {
     margin-bottom: 20px;
   }
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 699px) {
   .main-content {
     padding: 0 16px;
     &__title {
