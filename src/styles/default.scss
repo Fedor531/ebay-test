@@ -41,13 +41,47 @@ li {
     }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity .3s;
-}
-.fade-enter,
-.fade-leave-to {
+.fade-enter-active {
+    transition: transform 0.8s, opacity 0.4s;
+    transition-delay: 0s;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    transform: translateX(100%);
     opacity: 0;
+    z-index: 1;
+}
+
+.fade-enter-to {
+    transform: translateX(0);
+    background-attachment: scroll;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 1;
+}
+.fade-leave-active {
+    transition: transform 0.8s, opacity 0.4s;
+}
+.fade-leave-to {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+.question-enter-active {
+    transform: translateX(5%);
+    transition: transform 0.4s, opacity 0.4s;
+}
+.question-leave-active {
+    transform: translateX(-5%);
+    transition: transform 0.4s, opacity 0.4s;
+}
+.question-enter,
+.question-leave-to {
+    opacity: 0;
+}
+
+.question-enter-to {
+    transform: translateX(0);
 }
 
 .question-btn {

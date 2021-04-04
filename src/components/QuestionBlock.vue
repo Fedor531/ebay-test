@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade" mode="out-in">
+  <transition name="question" mode="out-in">
     <div class="questions-content" :key="currentQuestion.id">
       <h2 class="questions-content__title">
         {{ currentQuestion.title }}
