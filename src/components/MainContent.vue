@@ -3,15 +3,22 @@
     <h1 class="main-content__title">
       eBay исполняется 25 лет!Проверьте, а все ли у вас сбалансировано в жизни
     </h1>
-    <button class="main-content__button button-default">Начать тест</button>
+    <button class="main-content__button button-default" @click="nextPages">
+      Начать тест
+    </button>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
   data() {
     return {};
   },
+  methods: {
+    ...mapMutations(['nextPages']),
+  },
+  mounted() {},
 };
 </script>
 

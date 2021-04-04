@@ -1,22 +1,28 @@
 <template>
   <div class="app">
-    <component v-bind:is="currentComponent"></component>
+    <transition name="fade" mode="out-in">
+      <component v-bind:is="currentComponent"></component>
+    </transition>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import Main from './views/Main.vue';
+import Questions from './views/Questions.vue';
 
 export default {
   name: 'app',
   components: {
     mainPage: Main,
+    questionsPage: Questions,
   },
   data() {
     return {};
   },
   computed: {
+    ...mapGetters(['pages', 'activePage']),
     currentComponent() {
-      return 'mainPage';
+      return this.pages[this.activePage];
     },
   },
 };
