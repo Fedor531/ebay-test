@@ -43,9 +43,31 @@ li {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s;
+    transition: opacity .3s;
 }
 .fade-enter,
 .fade-leave-to {
     opacity: 0;
+}
+
+.question-btn {
+    font-size: 16px;
+    line-height: 19px;
+    color: #365001;
+    padding: 13px 20px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        color: #000;
+        background-color: #fff;
+    }
+    &:active {
+        transition: 0.1s ease;
+        transform: scale(0.98);
+    }
 }

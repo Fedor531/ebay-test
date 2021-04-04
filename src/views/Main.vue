@@ -28,6 +28,7 @@ export default {
 
 <style lang="scss">
 .main {
+  position: relative;
   flex-grow: 1;
   display: flex;
   &__left {
@@ -46,7 +47,6 @@ export default {
     &__left {
       width: 100%;
       height: 68%;
-      background-color: #659eff;
     }
 
     &__right {

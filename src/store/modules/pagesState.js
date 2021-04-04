@@ -7,7 +7,7 @@ export default {
 
     },
     mutations: {
-        nextPages(state) {
+        nextPage(state) {
             state.activePage++;
         }
     },

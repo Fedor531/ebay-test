@@ -1,10 +1,10 @@
 <template>
   <div class="main-content">
     <h1 class="main-content__title">
-      eBay исполняется 25 лет!Проверьте, а все ли у вас сбалансировано в жизни
+      {{ title }}
     </h1>
-    <button class="main-content__button button-default" @click="nextPages">
-      Начать тест
+    <button class="main-content__button button-default" @click="next">
+      {{ button }}
     </button>
   </div>
 </template>
@@ -13,12 +13,18 @@
 import { mapMutations } from 'vuex';
 export default {
   data() {
-    return {};
+    return {
+      title:
+        'eBay исполняется 25 лет!Проверьте, а все ли у вас сбалансировано в жизни',
+      button: 'Начать тест',
+    };
   },
   methods: {
-    ...mapMutations(['nextPages']),
+    ...mapMutations(['nextPage']),
+    next() {
+      this.nextPage();
+    },
   },
-  mounted() {},
 };
 </script>
 
