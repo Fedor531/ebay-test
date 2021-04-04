@@ -9,12 +9,14 @@
 import { mapGetters } from 'vuex';
 import Main from './views/Main.vue';
 import Questions from './views/Questions.vue';
+import Results from './views/Results.vue';
 
 export default {
   name: 'app',
   components: {
     mainPage: Main,
     questionsPage: Questions,
+    resultsPage: Results,
   },
   data() {
     return {};

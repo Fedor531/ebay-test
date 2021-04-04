@@ -1,24 +1,12 @@
 <template>
   <div class="questions">
     <div class="questions__left">
-      <div class="questions-content">
-        <h2 class="questions-content__title">
-          {{ title }}
-        </h2>
-        <div class="questions-content__btns">
-          <button
-            v-for="item in buttons"
-            :key="item.id"
-            class="questions-content__btn question-btn"
-          >
-            {{ item.title }}
-          </button>
-        </div>
-      </div>
+      <QuestionBlock :questions="questions" />
     </div>
     <div class="questions__right">
       <div class="questions-images">
-        
+        <ImageBlock :imgArray="imgArray1" />
+        <ImageBlock :imgArray="imgArray2" />
       </div>
     </div>
   </div>
@@ -26,16 +14,87 @@
 
 
 <script>
+import ImageBlock from '../components/ImageBlock.vue';
+import QuestionBlock from '../components/QuestionBlock.vue';
+
 export default {
   name: 'questionsPage',
 
+  components: {
+    ImageBlock,
+    QuestionBlock,
+  },
+
   data() {
     return {
-      title: 'Вопрос категории про отдых и увлечения',
-      buttons: [
-        { id: 1, title: 'Машина для хот-догов' },
-        { id: 2, title: ' Новые детали для тюнинга авто' },
-        { id: 3, title: '  Велосипеды всей семье' },
+      questions: [
+        {
+          id: 1,
+          title: 'Вопрос категории про отдых и увлечения',
+          anwser: [
+            { id: 1, title: 'Машина для хот-догов', value: 'auto' },
+            { id: 2, title: ' Новые детали для тюнинга авто', value: 'detail' },
+            { id: 3, title: '  Велосипеды всей семье', value: 'baik' },
+          ],
+        },
+        {
+          id: 2,
+          title: 'Вопрос про природу',
+          anwser: [
+            { id: 1, title: 'Отдых и веселье', value: 'auto' },
+            { id: 2, title: 'Футбол', value: 'detail' },
+            { id: 3, title: 'Велосипеды всей семье', value: 'baik' },
+          ],
+        },
+        {
+          id: 3,
+          title: 'Вопрос категории про отдых и увлечения',
+          anwser: [
+            { id: 1, title: 'Машина для хот-догов', value: 'auto' },
+            { id: 2, title: 'Новые детали для тюнинга авто', value: 'detail' },
+            { id: 3, title: 'Велосипеды всей семье', value: 'baik' },
+          ],
+        },
+      ],
+      imgArray1: [
+        {
+          id: 1,
+          img: 'bus.svg',
+          styleImg: {
+            width: '70%',
+            height: ' 63%',
+          },
+          backgroundColor: '#FDF4BA',
+        },
+      ],
+      imgArray2: [
+        {
+          id: 1,
+          img: 'wheel.svg',
+          styleImg: {
+            width: '70%',
+            height: '76%',
+          },
+          backgroundColor: '#F9E377',
+        },
+        {
+          id: 2,
+          img: 'gamepad2.svg',
+          styleImg: {
+            width: '57%',
+            height: ' 53%',
+          },
+          backgroundColor: '#CAE53C',
+        },
+        {
+          id: 3,
+          img: 'bike.svg',
+          styleImg: {
+            width: '75%',
+            height: ' 70%',
+          },
+          backgroundColor: '#EBF86E',
+        },
       ],
     };
   },
@@ -55,7 +114,6 @@ export default {
   }
   &__right {
     width: 45%;
-    background-color: aqua;
   }
   @media all and (max-width: 768px) {
     flex-direction: column;
@@ -71,25 +129,9 @@ export default {
   }
 }
 
-.questions-content {
-  color: #365001;
-  padding: 16px;
-  &._text-white {
-    color: #fff;
-  }
-  &__title {
-    margin-bottom: 20px;
-  }
-  &__btns {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-  }
-  &__btn {
-    margin-right: auto;
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
+.questions-images {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 </style>

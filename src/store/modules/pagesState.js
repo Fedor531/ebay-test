@@ -1,6 +1,6 @@
 export default {
     state: {
-        pages: ['mainPage', 'questionsPage'],
+        pages: ['mainPage', 'questionsPage', 'resultsPage'],
         activePage: 0
     },
     actions: {
