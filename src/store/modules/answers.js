@@ -1,14 +1,13 @@
 export default {
     state: {},
     actions: {
-        ajaxSendMail() {
-            return new Promise(function(resolve, reject) {
-                const form = document.querySelector('.contact__form')
+        ajaxPostAnswer(state, form) {
+            return new Promise(function (resolve, reject) {
                 const request = new XMLHttpRequest()
-                request.open('POST', 'https://pereverzev.pro/send.php', true)
-                request.send(new FormData(form))
+                request.open('POST', 'http://localhost/ebaydb/postAnswer.php', true)
+                request.send(form)
                 console.log('Отправка запроса')
-                request.onload = function() {
+                request.onload = function () {
                     if (request.readyState === 4 && request.status === 200) {
                         resolve('Запрос отправлен')
                     } else {

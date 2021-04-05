@@ -39,20 +39,20 @@ export default {
         },
         {
           id: 2,
-          title: 'Вопрос про природу',
+          title: 'Вопрос про активность',
           anwser: [
-            { id: 1, title: 'Отдых и веселье', value: 'auto' },
-            { id: 2, title: 'Футбол', value: 'detail' },
-            { id: 3, title: 'Велосипеды всей семье', value: 'baik' },
+            { id: 1, title: 'Отдых и веселье', value: 'party' },
+            { id: 2, title: 'Футбол', value: 'football' },
+            { id: 3, title: 'Баскетбол', value: 'basketball' },
           ],
         },
         {
           id: 3,
           title: 'Вопрос категории про отдых и увлечения',
           anwser: [
-            { id: 1, title: 'Машина для хот-догов', value: 'auto' },
-            { id: 2, title: 'Новые детали для тюнинга авто', value: 'detail' },
-            { id: 3, title: 'Велосипеды всей семье', value: 'baik' },
+            { id: 1, title: 'Машины', value: 'auto' },
+            { id: 2, title: 'Корабли', value: 'detail' },
+            { id: 3, title: 'Мотоциклы', value: 'motorbike' },
           ],
         },
       ],

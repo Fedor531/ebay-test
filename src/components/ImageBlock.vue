@@ -69,7 +69,6 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       &:nth-child(1) {
         grid-column-start: 1;
         grid-column-end: 2;

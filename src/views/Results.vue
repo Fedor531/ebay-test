@@ -11,9 +11,24 @@
           Пройти еще раз
         </button>
         <button class="results__active question-btn">{{ activeButton }}</button>
+        <div class="results__to-share">
+          <span class="results__to-share-title">Поделиться:</span>
+          <a
+            v-for="item in socials"
+            :key="item.id"
+            class="results__to-share-link"
+            :href="item.link"
+          >
+            <img :src="getImgUrl(item.img)" :alt="item.alt" />
+          </a>
+        </div>
       </div>
     </div>
-    <div class="results__right"></div>
+    <div class="results__right">
+      <div class="results__diagram">
+        <img src="../images/diagram.svg" alt="diagram" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,11 +46,20 @@ export default {
       title: 'Результаты вашего теста:',
       subtitle: 'Вы прошли тест и можете посмотреть на свои результаты',
       activeButton: 'Устроить шопинг',
+      socials: [
+        { id: 1, img: 'fb.svg', alt: 'fb', link: '/' },
+        { id: 2, img: 'vk.svg', alt: 'vk', link: '/' },
+        { id: 3, img: 'tw.svg', alt: 'tw', link: '/' },
+        { id: 4, img: 'ok.svg', alt: 'ok', link: '/' },
+      ],
     };
   },
 
   methods: {
     ...mapMutations(['nextPage']),
+    getImgUrl(pic) {
+      return require(`../images/icons/${pic}`);
+    },
   },
 };
 </script>
@@ -79,12 +103,39 @@ export default {
   .question-btn {
     color: #111259;
   }
+  &__to-share {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    &-title {
+      margin-right: 10px;
+    }
+    &-link {
+      width: 30px;
+      height: 30px;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+  &__diagram {
+    height: 64%;
+    width: 100%;
+    margin-left: -8%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   &__container {
     padding: 0 40px;
     display: flex;
     flex-direction: column;
   }
   &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
     background-color: #92c9ff;
   }
@@ -92,21 +143,31 @@ export default {
     flex-direction: column;
     &__left {
       width: 100%;
-      height: 50%;
+      height: 60%;
     }
     &__container {
       padding: 0 16px;
     }
+    &__title {
+      margin-bottom: 5px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    &__to-share {
+      margin-top: 40px;
+    }
+    &__diagram  {
+      height: 88%;
+    }
     &__right {
-      height: 50%;
+      height: 40%;
       width: 100%;
+      overflow: hidden;
     }
   }
-}
-
-.questions-images {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 </style>

@@ -9,7 +9,7 @@
           v-for="item in currentQuestion.anwser"
           :key="item.id"
           class="questions-content__btn question-btn"
-          @click="answerQuestion"
+          @click="answerQuestion(item)"
         >
           {{ item.title }}
         </button>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 
 export default {
   props: {
@@ -36,15 +36,31 @@ export default {
   },
   methods: {
     ...mapMutations(['nextPage']),
+    ...mapActions(['ajaxPostAnswer']),
 
-    answerQuestion() {
+    async answerQuestion(item) {
+      const formData = new FormData();
+      formData.append('title', item.title);
+      formData.append('value', item.value);
       if (this.questions.length === this.currentQuestion.id) {
-        // Запрос к бд
-        this.nextPage('resultsPage');
+        await this.ajaxPostAnswer(formData)
+          .then((res) => {
+            console.log(res);
+            this.nextPage('resultsPage');
+          })
+          .catch((res) => {
+            console.log(res);
+          });
       } else {
-        // Запрос к бд
-        this.activeQuestion += 1;
-        this.currentQuestion = this.questions[this.activeQuestion];
+        await this.ajaxPostAnswer(formData)
+          .then((res) => {
+            console.log(res);
+            this.activeQuestion += 1;
+            this.currentQuestion = this.questions[this.activeQuestion];
+          })
+          .catch((res) => {
+            console.log(res);
+          });
       }
     },
   },
