@@ -4,7 +4,7 @@ export default {
         ajaxPostAnswer(state, form) {
             return new Promise(function (resolve, reject) {
                 const request = new XMLHttpRequest()
-                request.open('POST', 'http://localhost/ebaydb/postAnswer.php', true)
+                request.open('POST', 'https://pereverzev.pro/ebaydb/postAnswer.php', true)
                 request.send(form)
                 console.log('Отправка запроса')
                 request.onload = function () {

@@ -48,15 +48,15 @@ export default {
     async answerQuestion(item) {
       if (this.questions.length === this.currentQuestion.id) {
         this.nextPage('resultsPage');
-       /*  await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
+        await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
           console.log(res);
-        }); */
+        });
       } else {
         this.activeQuestion += 1;
         this.currentQuestion = this.questions[this.activeQuestion];
-       /*  await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
+        await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
           console.log(res);
-        }); */
+        });
       }
     },
   },
