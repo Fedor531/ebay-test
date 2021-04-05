@@ -8,7 +8,7 @@
       <img
         :src="getImgUrl(imgArray[0].img)"
         alt="img"
-        :style="imgArray[0].styleImg"
+        :style="getStyle(imgArray[0].styleImg)"
       />
     </div>
     <div v-else-if="imgArray.length === 2" class="image-block-2">
@@ -17,7 +17,11 @@
         :key="item.id"
         :style="{ backgroundColor: item.backgroundColor }"
       >
-        <img :src="getImgUrl(item.img)" alt="img" :style="item.styleImg" />
+        <img
+          :src="getImgUrl(item.img)"
+          alt="img"
+          :style="getStyle(item.styleImg)"
+        />
       </div>
     </div>
     <div v-else-if="imgArray.length === 3" class="image-block-3">
@@ -27,7 +31,11 @@
         :key="item.id"
         :style="{ backgroundColor: item.backgroundColor }"
       >
-        <img :src="getImgUrl(item.img)" alt="img" :style="item.styleImg" />
+        <img
+          :src="getImgUrl(item.img)"
+          alt="img"
+          :style="getStyle(item.styleImg)"
+        />
       </div>
     </div>
   </div>
@@ -45,19 +53,53 @@ export default {
     getImgUrl(pic) {
       return require(`../images/${pic}`);
     },
+    getStyle(style) {
+      return style;
+    },
   },
 };
 </script>
 
 <style lang="scss">
+@keyframes appearanceLeft {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes appearanceTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes disk {
+  from {
+    transform: scale(0) rotate(720deg);
+  }
+  to {
+    transform: scale(1) rotate(0);
+  }
+}
+
 .image-block {
   height: 50%;
+  img {
+    position: relative;
+  }
   &-1 {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   &-3 {
     height: 100%;
@@ -69,6 +111,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
       &:nth-child(1) {
         grid-column-start: 1;
         grid-column-end: 2;
