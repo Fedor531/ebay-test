@@ -40,7 +40,6 @@ export default {
 
 <style lang="scss">
 .main {
-  position: relative;
   flex-grow: 1;
   display: flex;
   &__left {

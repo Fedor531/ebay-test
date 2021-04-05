@@ -38,29 +38,25 @@ export default {
     ...mapMutations(['nextPage']),
     ...mapActions(['ajaxPostAnswer']),
 
-    async answerQuestion(item) {
+    createFormData(answer) {
       const formData = new FormData();
-      formData.append('title', item.title);
-      formData.append('value', item.value);
+      formData.append('title', answer.title);
+      formData.append('value', answer.value);
+      return formData;
+    },
+
+    async answerQuestion(item) {
       if (this.questions.length === this.currentQuestion.id) {
-        await this.ajaxPostAnswer(formData)
-          .then((res) => {
-            console.log(res);
-            this.nextPage('resultsPage');
-          })
-          .catch((res) => {
-            console.log(res);
-          });
+        this.nextPage('resultsPage');
+        await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
+          console.log(res);
+        });
       } else {
-        await this.ajaxPostAnswer(formData)
-          .then((res) => {
-            console.log(res);
-            this.activeQuestion += 1;
-            this.currentQuestion = this.questions[this.activeQuestion];
-          })
-          .catch((res) => {
-            console.log(res);
-          });
+        this.activeQuestion += 1;
+        this.currentQuestion = this.questions[this.activeQuestion];
+        await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
+          console.log(res);
+        });
       }
     },
   },

@@ -28,8 +28,8 @@ export default {
       },
     };
   },
-  /*   created() {
-    if (window.innerWidth <= 768) {
+ /*  created() {
+    if (window.innerWidth < 700) {
       this.swiperOption.direction = 'horizontal';
     } else {
       this.swiperOption.direction = 'vertical';
