@@ -29,13 +29,6 @@ export default {
       },
     };
   },
-  /*  created() {
-    if (window.innerWidth < 700) {
-      this.swiperOption.direction = 'horizontal';
-    } else {
-      this.swiperOption.direction = 'vertical';
-    }
-  }, */
   mounted() {
     this.swiper = this.$refs.mainSwiper.$swiper;
     setTimeout(() => {
