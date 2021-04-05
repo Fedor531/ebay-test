@@ -1,11 +1,7 @@
 <template>
   <div class="main">
     <div class="main__left">
-      <MainContent
-        :title="title"
-        :button="button"
-        @nextPage="nextPage('questionsPage')"
-      />
+      <MainContent :title="title" :button="button" @nextPage="next" />
     </div>
     <div class="main__right">
       <MainSwiper />
@@ -30,10 +26,14 @@ export default {
       title:
         'eBay исполняется 25 лет! Проверьте, а все ли у вас сбалансировано в жизни',
       button: 'Начать тест',
+      activeClass: '',
     };
   },
   methods: {
     ...mapMutations(['nextPage']),
+    next() {
+      this.nextPage('questionsPage');
+    },
   },
 };
 </script>
@@ -42,6 +42,12 @@ export default {
 .main {
   flex-grow: 1;
   display: flex;
+  position: relative;
+  &.fade-leave-active {
+    &::after {
+      background-color: #fbce26;
+    }
+  }
   &__left {
     width: 68%;
     background-color: #659eff;

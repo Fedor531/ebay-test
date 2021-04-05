@@ -36,7 +36,7 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'images',
-              esModule: false // <- here
+              esModule: false
             }
           }
         ]
@@ -55,8 +55,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Ebay test',
-      template: path.resolve(__dirname, './public/index.html'), // шаблон
-      filename: 'index.html' // название выходного файла
+      template: path.resolve(__dirname, './public/index.html'),
+      filename: 'index.html'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),

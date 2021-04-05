@@ -75,7 +75,7 @@ export default {
           styleImg: {
             width: '70%',
             height: '76%',
-            animation: 'disk 1s 1s ease normal forwards',
+            animation: 'disk 1s .3s ease normal forwards',
             transform: 'scale(0) rotate(720deg)',
           },
           backgroundColor: '#F9E377',
@@ -86,7 +86,7 @@ export default {
           styleImg: {
             width: '57%',
             height: ' 53%',
-            animation: 'appearanceTop 1s 2s ease normal forwards',
+            animation: 'appearanceTop 1s .6s ease normal forwards',
             top: '-100%',
           },
           backgroundColor: '#CAE53C',
@@ -97,7 +97,7 @@ export default {
           styleImg: {
             width: '75%',
             height: ' 70%',
-            animation: 'appearanceLeft 1s 3s ease normal forwards',
+            animation: 'appearanceLeft 1s .9s ease normal forwards',
             right: '100%',
           },
           backgroundColor: '#EBF86E',
@@ -112,6 +112,11 @@ export default {
 .questions {
   flex-grow: 1;
   display: flex;
+  &.fade-leave-active {
+    &::after {
+      background-color: #c4e5fc;
+    }
+  }
   &__left {
     width: 55%;
     display: flex;

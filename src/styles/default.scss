@@ -41,6 +41,15 @@ li {
     }
 }
 
+@keyframes nextPage {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
 .fade-enter-active {
     transition: transform 0.8s, opacity 0.4s;
     transition-delay: 0s;
@@ -61,6 +70,18 @@ li {
 }
 .fade-leave-active {
     transition: transform 0.8s, opacity 0.4s;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 100%;
+        right: 0;
+        bottom: 0;
+        z-index: 2000;
+        animation: nextPage 1s linear normal;
+    }
 }
 .fade-leave-to {
     transform: translateX(-100%);

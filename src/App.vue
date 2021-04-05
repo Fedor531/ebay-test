@@ -33,9 +33,20 @@ export default {
 <style lang="scss">
 @import './styles/default';
 
+@keyframes nextPage {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
 .app {
   display: flex;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 </style>>

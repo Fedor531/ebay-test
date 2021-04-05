@@ -54,6 +54,11 @@ export default {
   flex-grow: 1;
   display: flex;
   color: #111259;
+  &.fade-leave-active {
+    &::after {
+      background-color: #659eff;
+    }
+  }
   &__left {
     width: 50%;
     display: flex;
