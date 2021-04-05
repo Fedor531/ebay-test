@@ -17,6 +17,7 @@ export default {
     return {
       swiper: null,
       swiperOption: {
+        init: false,
         direction: 'vertical',
         speed: 2000,
         loop: true,
@@ -28,7 +29,7 @@ export default {
       },
     };
   },
- /*  created() {
+  /*  created() {
     if (window.innerWidth < 700) {
       this.swiperOption.direction = 'horizontal';
     } else {
@@ -37,6 +38,14 @@ export default {
   }, */
   mounted() {
     this.swiper = this.$refs.mainSwiper.$swiper;
+    setTimeout(() => {
+      this.createSwiper();
+    }, 100);
+  },
+  methods: {
+    createSwiper() {
+      this.swiper.init();
+    },
   },
   beforeDestroy() {
     this.swiper.destroy();
