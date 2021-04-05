@@ -32,23 +32,23 @@ export default {
           id: 1,
           title: 'Вопрос категории про отдых и увлечения',
           anwser: [
-            { id: 1, title: 'Машина для хот-догов', value: 'auto' },
-            { id: 2, title: ' Новые детали для тюнинга авто', value: 'detail' },
-            { id: 3, title: '  Велосипеды всей семье', value: 'baik' },
+            { id: 1, title: 'Машина для хот-догов.', value: 'auto' },
+            { id: 2, title: ' Новые детали для тюнинга авто.', value: 'detail' },
+            { id: 3, title: '  Велосипеды всей семье.', value: 'baik' },
           ],
         },
         {
           id: 2,
-          title: 'Вопрос про активность',
+          title: 'С чего начинается ваш понедельник?',
           anwser: [
-            { id: 1, title: 'Отдых и веселье', value: 'party' },
-            { id: 2, title: 'Футбол', value: 'football' },
-            { id: 3, title: 'Баскетбол', value: 'basketball' },
+            { id: 1, title: 'С утренней пробежки.', value: 'run' },
+            { id: 2, title: 'С подкаста или книгу оп пути на работу', value: 'work' },
+            { id: 3, title: 'Рабочие дела', value: 'affairs' },
           ],
         },
         {
           id: 3,
-          title: 'Вопрос категории про отдых и увлечения',
+          title: 'Какой вид транспорта вы предпочитаете?',
           anwser: [
             { id: 1, title: 'Машины', value: 'auto' },
             { id: 2, title: 'Корабли', value: 'detail' },

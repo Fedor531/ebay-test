@@ -40,7 +40,7 @@ export default {
     this.swiper = this.$refs.mainSwiper.$swiper;
     setTimeout(() => {
       this.createSwiper();
-    }, 100);
+    }, 50);
   },
   methods: {
     createSwiper() {
