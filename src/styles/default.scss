@@ -105,3 +105,13 @@ li {
         transform: scale(0.98);
     }
 }
+
+.content-container {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    @media all and (max-width: 699px) {
+        padding: 0 16px;
+        width: 100%;
+    }
+}

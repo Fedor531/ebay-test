@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="main-content content-container">
     <h1 class="main-content__title">
       {{ title }}
     </h1>
@@ -26,7 +26,6 @@ export default {
 <style lang="scss">
 .main-content {
   max-width: 400px;
-  padding: 0 40px;
   &__title {
     font-weight: 900;
     font-size: 32px;
@@ -34,10 +33,12 @@ export default {
     color: #fff;
     margin-bottom: 20px;
   }
+  &__button {
+    margin-right: auto;
+  }
 }
 @media all and (max-width: 699px) {
   .main-content {
-    padding: 0 16px;
     &__title {
       font-size: 24px;
       line-height: 30px;

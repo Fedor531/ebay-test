@@ -1,6 +1,6 @@
 <template>
   <transition name="question" mode="out-in">
-    <div class="questions-content" :key="currentQuestion.id">
+    <div class="questions-content content-container" :key="currentQuestion.id">
       <h2 class="questions-content__title">
         {{ currentQuestion.title }}
       </h2>
@@ -48,15 +48,15 @@ export default {
     async answerQuestion(item) {
       if (this.questions.length === this.currentQuestion.id) {
         this.nextPage('resultsPage');
-        await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
+       /*  await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
           console.log(res);
-        });
+        }); */
       } else {
         this.activeQuestion += 1;
         this.currentQuestion = this.questions[this.activeQuestion];
-        await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
+       /*  await this.ajaxPostAnswer(this.createFormData(item)).then((res) => {
           console.log(res);
-        });
+        }); */
       }
     },
   },
@@ -66,9 +66,6 @@ export default {
 <style lang="scss">
 .questions-content {
   color: #365001;
-  padding: 16px;
-  min-width: 83%;
-  padding: 0 40px;
   &._text-white {
     color: #fff;
   }
@@ -88,7 +85,6 @@ export default {
     }
   }
   @media all and (max-width: 699px) {
-    padding: 0 16px;
     &__title {
       font-size: 24px;
     }
