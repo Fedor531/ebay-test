@@ -1,19 +1,25 @@
 {
   "name": "ebay-test",
   "version": "1.0.0",
-  "description": "js, vue, scss",
+  "description": "Тестовый проект",
+  "keywords": [
+    "js",
+    "webpack",
+    "vue",
+    "scss",
+    "javascript"
+  ],
+  "author": "Fedor <fedor531@yandex.ru>",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "serve": "webpack serve --mode=development",
+    "build": "cross-env NODE_ENV=production && webpack --mode=production",
+    "serve": "cross-env NODE_ENV=development && webpack serve --mode=development",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fedor531/ebay-test.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Fedor531/ebay-test/issues"
@@ -46,6 +52,7 @@
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "swiper": "^6.5.3",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",

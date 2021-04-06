@@ -3,8 +3,10 @@ export default {
     actions: {
         ajaxPostAnswer(state, form) {
             return new Promise(function (resolve, reject) {
+                const isDev = process.env.NODE_ENV === 'development';
+                const url = isDev ? 'http://localhost/ebaydb/postAnswer.php' : 'https://pereverzev.pro/ebaydb/postAnswer.php'
                 const request = new XMLHttpRequest()
-                request.open('POST', 'https://pereverzev.pro/ebaydb/postAnswer.php', true)
+                request.open('POST', url, true)
                 request.send(form)
                 console.log('Отправка запроса')
                 request.onload = function () {
