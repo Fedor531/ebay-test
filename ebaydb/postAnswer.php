@@ -16,9 +16,12 @@ if (isset($_POST['title']) && isset($_POST['value'])) {
 
     $title = $_POST['title'];
     $value = $_POST['value'];
+    $ipAddress = $_SERVER['REMOTE_ADDR'];
+    print_r($ipAddress);
+    $time = date("F j, Y, g:i a");  
 
     // Создание строки запроса
-    $query = "INSERT INTO answers VALUES(NULL,  '$title', '$value')";
+    $query = "INSERT INTO answers VALUES(NULL,  '$title', '$value', '$time', '$ipAddress')";
 
     // Выполняем запрос
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
