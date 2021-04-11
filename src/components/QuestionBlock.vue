@@ -31,7 +31,7 @@ export default {
       activeQuestion: 0,
     };
   },
-  created() {
+  mounted() {
     this.currentQuestion = this.questions[0];
   },
   methods: {
@@ -40,8 +40,7 @@ export default {
 
     createFormData(answer) {
       const formData = new FormData();
-      formData.append('title', answer.title);
-      formData.append('value', answer.value);
+      formData.append('id_answer', answer.id_answer);
       return formData;
     },
 

@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import Main from './views/Main.vue';
 import Questions from './views/Questions.vue';
 import Results from './views/Results.vue';
@@ -25,6 +25,21 @@ export default {
     ...mapGetters(['activePage']),
     currentComponent() {
       return this.activePage;
+    },
+  },
+  mounted() {
+    this.getDataQuestions();
+  },
+  methods: {
+    ...mapActions(['ajaxGetData']),
+    async getDataQuestions() {
+      await this.ajaxGetData()
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

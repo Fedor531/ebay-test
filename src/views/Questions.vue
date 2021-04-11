@@ -14,6 +14,7 @@
 
 
 <script>
+import { mapGetters } from 'vuex';
 import ImageBlock from '../components/ImageBlock.vue';
 import QuestionBlock from '../components/QuestionBlock.vue';
 
@@ -27,14 +28,14 @@ export default {
 
   data() {
     return {
-      questions: [
+      /* questions: [
         {
           id: 1,
           title: 'Вопрос категории про отдых и увлечения',
           anwser: [
             { id: 1, title: 'Машина для хот-догов.', value: 'auto' },
-            { id: 2, title: ' Новые детали для тюнинга авто.', value: 'detail' },
-            { id: 3, title: '  Велосипеды всей семье.', value: 'baik' },
+            { id: 2, title: 'Новые детали для тюнинга авто.', value: 'detail' },
+            { id: 3, title: 'Велосипеды всей семьи.', value: 'baik' },
           ],
         },
         {
@@ -42,7 +43,11 @@ export default {
           title: 'С чего начинается ваш понедельник?',
           anwser: [
             { id: 1, title: 'С утренней пробежки.', value: 'run' },
-            { id: 2, title: 'С подкаста или книгу оп пути на работу', value: 'work' },
+            {
+              id: 2,
+              title: 'С подкаста или книгу оп пути на работу',
+              value: 'work',
+            },
             { id: 3, title: 'Рабочие дела', value: 'affairs' },
           ],
         },
@@ -55,7 +60,8 @@ export default {
             { id: 3, title: 'Мотоциклы', value: 'motorbike' },
           ],
         },
-      ],
+      ], */
+      questions: [],
       imgArray1: [
         {
           id: 1,
@@ -104,6 +110,36 @@ export default {
         },
       ],
     };
+  },
+
+  computed: {
+    ...mapGetters(['getQuestions', 'getAnswers']),
+  },
+  created() {
+    this.createQuestionsArray();
+  },
+  methods: {
+    createQuestionsArray() {
+      this.questions = this.getQuestions.map((question) => {
+        const result = {
+          id: +question.id_question,
+          title: question.question,
+        };
+        const anwser = this.getAnswers
+          .map((answer) => {
+            return {
+              id_answer: +answer.id_answer,
+              title: answer.answer,
+              id_question: +answer.id_question,
+            };
+          })
+          .filter((answer) => {
+            return answer.id_question === result.id;
+          });
+        result.anwser = anwser;
+        return result;
+      });
+    },
   },
 };
 </script>
