@@ -4,8 +4,8 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
-import { Swiper as SwiperClass, Autoplay } from 'swiper/swiper.esm.js'
-import 'swiper/swiper-bundle.css'
+import { Swiper as SwiperClass, Autoplay } from 'swiper/js/swiper.esm.js'
+import 'swiper/css/swiper.min.css'
 import store from './store'
 
 

@@ -1,15 +1,6 @@
 # Adaptive survey
 #### Description: Test task
-#### Company:  ["pikabu.ru"](https://pikabu.ru/)
-#### Position: Fullstack developer 
-#### Task: 
-// TODO исправить <br/>
-В проекте реализован анимириванный функционал переключения между компонентами. <br/>
-Данные вопросов и ответы на них приходят из бд. <br/>
-Каждый ответ на вопрос делает ajax запрос на сервер, где обрабатываются php, и данные записываются в базу данных Mysql. <br/>
-Использовал тестовую онлайн версию базы данных https://www.phpmyadmin.co/ , куда записывал результаты. <br/>
-Php код, который обрабатывает запросы на сервер, можно просмотреть в папке ebay_test <br/>
-//
+#### Position: Fullstack developer
 #### Technology:
 * Vue 
 * Scss (flexbox, grid)
@@ -18,6 +9,7 @@ Php код, который обрабатывает запросы на серв
 * Mysql 
 #### Manual
 * Setting dependencies 
+* Node.js - v14.17.3
 ```
 npm install
 ```

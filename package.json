@@ -53,7 +53,7 @@
     "@babel/runtime": "^7.13.10",
     "axios": "^0.21.1",
     "cross-env": "^7.0.3",
-    "swiper": "^6.5.3",
+    "swiper": "5.2.0",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",
     "vue-axios": "^3.2.4",
