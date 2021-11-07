@@ -28,7 +28,9 @@ export default {
 
   data() {
     return {
-      questions: [],
+      questions: [
+
+      ],
       imgArray1: [
         {
           id: 1,
