@@ -70,6 +70,7 @@ export default {
     }
 
     &__btn {
+        width: 200px;
         margin-right: auto;
 
         &:not(:last-child) {
