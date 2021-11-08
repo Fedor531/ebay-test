@@ -1,12 +1,10 @@
 # Adaptive survey
 #### Description: Test task
-#### Position: Fullstack developer
+#### Position: Frontend developer
 #### Technology:
 * Vue 
 * Scss (flexbox, grid)
 * Webpack 5
-* Php
-* Mysql 
 #### Manual
 * Setting dependencies 
 * Node.js - v14.17.3
