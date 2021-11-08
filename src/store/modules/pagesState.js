@@ -2,9 +2,7 @@ export default {
     state: {
         activePage: 'mainPage'
     },
-    actions: {
-
-    },
+    actions: {},
     mutations: {
         nextPage(state, page) {
             state.activePage = page;

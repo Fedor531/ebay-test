@@ -14,7 +14,6 @@
 
 
 <script>
-import { mapGetters } from 'vuex';
 import ImageBlock from '../components/ImageBlock.vue';
 import QuestionBlock from '../components/QuestionBlock.vue';
 
@@ -28,9 +27,62 @@ export default {
 
   data() {
     return {
-      questions: [
-
-      ],
+        questions: [
+            {
+                id: 1,
+                title: '1 Вопрос',
+                answer: [
+                    {
+                        id: 1,
+                        title: '1 Ответ'
+                    },
+                    {
+                        id: 2,
+                        title: '2 Ответ'
+                    },
+                    {
+                        id: 3,
+                        title: '3 Ответ'
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: '2 Вопрос',
+                answer: [
+                    {
+                        id: 1,
+                        title: '2 Ответ'
+                    },
+                    {
+                        id: 2,
+                        title: '2 Ответ'
+                    },
+                    {
+                        id: 3,
+                        title: '2 Ответ'
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: '3 Вопрос',
+                answer: [
+                    {
+                        id: 1,
+                        title: '3 Ответ'
+                    },
+                    {
+                        id: 2,
+                        title: '3 Ответ'
+                    },
+                    {
+                        id: 3,
+                        title: '3 Ответ'
+                    }
+                ]
+            }
+        ],
       imgArray1: [
         {
           id: 1,
@@ -81,34 +133,7 @@ export default {
     };
   },
 
-  computed: {
-    ...mapGetters(['getQuestions', 'getAnswers']),
-  },
-  created() {
-    this.createQuestionsArray();
-  },
   methods: {
-    createQuestionsArray() {
-      this.questions = this.getQuestions.map((question) => {
-        const result = {
-          id: +question.id_question,
-          title: question.question,
-        };
-        const anwser = this.getAnswers
-          .map((answer) => {
-            return {
-              id_answer: +answer.id_answer,
-              title: answer.answer,
-              id_question: +answer.id_question,
-            };
-          })
-          .filter((answer) => {
-            return answer.id_question === result.id;
-          });
-        result.anwser = anwser;
-        return result;
-      });
-    },
   },
 };
 </script>
